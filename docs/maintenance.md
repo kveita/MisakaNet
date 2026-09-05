@@ -187,3 +187,14 @@ mcp-publisher publish server.json
 若验证方暂不支持自选 spec，则在 registry 重发布后等其按新 tag 重爬。
 
 > 提交文案备份：`.audit-reports-20260905/registry-refresh-copy.md`（若需人工渠道）。
+
+## 10. MCP 目录矩阵（listing 维护）
+
+| 目录 | 条目状态(2026-09-05) | 认领/刷新方式 | 备注 |
+|---|---|---|---|
+| registry.modelcontextprotocol.io（官方） | 陈旧曾为 2.12.2；随 server.json 发布 | `mcp-publisher validate/login/publish`（§9） | 权威源；mcptoplist 等镜像它 |
+| mcptoplist.com | 同 registry | registry 更新后自动同步 | 无独立自助入口 |
+| mcpvault.io/servers/misakanet | 已自动收录（2026-09-03 邮件） | 站点 GitHub 登录认领（~1 分钟，免费）→ 请求验证（早期免费，对 https://misakanet.org/mcp 做真实 MCP 握手）→ 得 Verified 徽章（可嵌入 README） | 推广邮件来自 Henrik <hello@trymcpvault.com>；不感兴趣可回复 unsubscribe |
+
+> 决策记录（2026-09-05）：MCPVault 认领属可选营销项；若做，验证对象为远端
+> `https://misakanet.org/mcp`（与 §9 一致），徽章嵌入 README 时用目录提供的官方 badge URL。
