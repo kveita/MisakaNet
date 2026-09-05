@@ -122,3 +122,39 @@ python3 -m pytest tests/test_lesson_index_discovery.py tests/test_version_consis
 
 ---
 *本 handoff 由 2026-09-05 会话整理；详细证据与逐条验证见 `.audit-reports-20260905/01·02·03`。*
+
+---
+
+# Wave 2 收尾（2026-09-05 午后~深夜，附于本 handoff）
+
+> 承接上面 Wave 1（PR #1482）。本段记录 Wave 2 全部动作与最终状态。
+
+## 已合入 main（Wave 2）
+- **#1484** dsh.bundle 声明（B1）+ 评审修复（description 澄清、`tests/test_dsh_bundle.py` 契约测试）→ 合并
+- **#1486** B2-doc（npm vs git+ 指引 + maintenance §7 远端示例）→ 合并
+- **release v2.28.0**：release-please #1480 squash 合并（`6fe3fd38`）；tag v2.28.0 由 release-please 打（发布后确认）
+- **#1492** registry 对齐 2.28.0（server/glama/API/JOIN + pypi 条目；`align_versions --registry` 现同时同步 pypi entry，R3 不漂移）→ 我经 API 全流程（建 PR→检查→合并）
+- **registry schema 修复**：server.json description ≤100（官方 schema VALID）——发布阻断已除
+- **README GIF 恢复**（`e2b5fef94`，6.2MB demo，README/ja “8秒” 段复活）
+- **docs/maintenance.md**：§7 dsh bundle、§8 发布 checklist、§9 registry/dsh.so runbook、§10 MCP 目录矩阵（含 MCPVault）
+
+## PR 清理扫尾（Wave 2）
+- 合并 9：dsh 集成测试胜者 **#1487**、sync 测试 **#1485**、intake 单源 **#1488**、功能 **#1454/#1489/#1490/#1495**、i18n **#1496**（数据冲突由我重建）
+- 关闭重复 5：**#1414/#1481/#1483**（dsh 测试）、**#1470**（sync 测试）、**#1469**（被 #1488 取代）
+- **#1455**（status lifecycle，engine 冲突）：我代 rebase（保留其 supersedes/include_stale 语义，合并 canonical 重构）→ 推送 fork → 合并（Wave 2 末，限流后）
+
+## 运营备注（重要）
+- **凭据**：`~/.git-credentials` 含 3 条 github 条目（Ikalus1988/ikalus/zsxh1990）；REST 需用 **Ikalus1988 40 位 PAT**（早前 401 系提取拼接错误）
+- **API 限流**：core 5000/h；大扫尾会快速打满 → 合并/批量操作注意预留（reset 后自动恢复）
+- **fork PR 更新**：zsxh1990/MisakaNet fork 分支可用其 PAT 推送更新 PR head
+- check-runs 输出文本经 REST 不可读；rerequest 需更高 scope → “audit 红”排查以重跑/人工为准
+
+## 仍挂起（用户侧）
+1. `mcp-publisher login && publish`（server.json 2.28.0，VALID）→ registry/mcptoplist 更新
+2. dsh.so 用 **v2.28.0** spec 重验（L5.4 预期绿；tag 由 release-please 已/将创建）
+3. MCPVault 认领+验证（可选；§10）
+4. audit 红门 PR 队列（§“开放 PR 全景”）：多数为 env 抖动或需作者处理；#1412/#1413 需修 Windows CI
+5. DSH 上游提案（Issue 分类 + `dsh doctor` 等）→ `.audit-reports-20260905/dsh-upstream-proposals.md`
+6. 本地 `git pull --ff-only` 保持同步（main 现含 Wave1+2 全部）
+
+*Wave 2 逐条证据见 `.audit-reports-20260905/03-qw-execution-log.md`（追加于 2026-09-05）。*
