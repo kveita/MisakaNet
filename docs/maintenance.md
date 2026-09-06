@@ -198,3 +198,12 @@ mcp-publisher publish server.json
 
 > 决策记录（2026-09-05）：MCPVault 认领属可选营销项；若做，验证对象为远端
 > `https://misakanet.org/mcp`（与 §9 一致），徽章嵌入 README 时用目录提供的官方 badge URL。
+
+## 11. 复核记录：lesson PR ↔ intake 自动 issue（2026-09-06）
+
+- 事实：intake-label issue closed 53 / open 26；作者多为 Ikalus1988（intake MCP server 代建，模板+标签），
+  1 例 open 为 github-actions[bot]（#1368）。lesson/feature PR 引用的 issue 大多为维护者策展
+  （[Lesson]/[Search]/[Growth]/[Test]），仅少数指向 intake（如 #1494→#1368）。机制合理，非普遍滥用。
+- 风险：a) 自循环贡献（提交者=作者无核验）；b) 近重复主题（proxy/pip-timeout 多篇）；c) question intake 误转 lesson。
+- 建议：intake issue 记录提交者 node/source；作者==来源节点且无人确认时打 self-intake 标签；
+  PR 模板注明 closes+kind；kind=question 走 FAQ；提交前近重复阈值收紧；加转化率指标。
