@@ -2,7 +2,7 @@
 
 > 来源：[issue #1498 — Feedback from PR #1487: dsh integration tests](https://github.com/Ikalus1988/MisakaNet/issues/1498)
 > 报告人：hummern（PR #1487 作者，bounty #1403 首个真实 dsh 集成测试贡献者）
-> 状态：**评估完成，待拍板执行**（见 §6 分级方案）
+> 状态：**已执行完毕（2026-09-06，见 §9 执行记录）**
 > 相关：`handoff-2026-09-05.md`（fork DCO 等作者队列）、`docs/journey-reports/2026-07-20-uncledad96-glitch.md`
 
 ---
@@ -141,6 +141,29 @@ merged 且仍挂 needs-dco                         64 (15.4%)
 #1487 标签时间线      labeled 13:26 → merged 16:47，全程无 unlabeled
 #1487 最终 head       dco ✅ audit ✅ quality-labels ✅ 但 needs-dco 仍在
 ```
+
+## 9. 执行记录（2026-09-06，本方案已全部落地）
+
+- **P0 backfill**：`scripts/dco_label_backfill.py`（新增维护工具）扫描全部挂 `needs-dco`
+  的 PR 并按 commits（no-merges）核对——**移除 102 个失实标签**（3 open：**#1400/#1411/#1461**
+  即刻解锁 + 99 closed 数据卫生）；200 个 closed PR 因确有未签名提交而保留标签（语义真实）。
+- **P1 根治**：随 **PR #1502（merged `8cc2967f3`）** 合入——
+  - `pr-shape-guard.yml` Gate 4：每次 push（含 force-push）重扫，全签即 `toRemove needs-dco`；
+    merge 提交（2+ parents）豁免（与 dco-audit `--no-merges` 对齐）
+  - `pr-quality-gate.yml`：`ready-to-merge` 改由 DCO **check run 结论**驱动（`dcoOk`），
+    标签仅作无 run 时的兜底；标签生命周期（过清/败加）由 check run 双保险
+  - `dco-check.yml`：`git log --no-merges`——三套 DCO 实现语义统一
+  - `pr-checks.yml`：audit 报告 **marker（`<!-- misakanet-audit-report -->`）就地 upsert**
+    （实测 #1502 首跑即生效，不再堆叠评论）；DCO 通过时删除残留 `REGULATORY BLOCK` 评论
+- **P2 文档**：`CONTRIBUTING.md` DCO 节承诺"补签 force-push 后自动清除、勿推空提交"+
+  新增 *Node.js Test Conventions*（fixtures/ + `this.skip()`，回应 #1498 其余两点）；
+  `docs/label-system.md` `needs-dco` 行注明自动清除。
+- **issue #1498**：已回复致谢+根因+修复说明并 **closed**（resolution comment）。
+- **验证**：#1502 全绿（DCO/audit/shape/tests/CodeQL）；audit 报告首跑带 marker 就地更新。
+
+---
+*执行人：2026-09-06 维护会话；详见 `docs/maintainer/handoff-2026-09-06.md`。*
+
 
 ---
 *报告人视角为维护者侧取证；改进方案待拍板后以独立 PR 落地（遵循 Shape Guard 规则：工作流文件改动走 `workflow-change` 标签 + 人工 review）。*
