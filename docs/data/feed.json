@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T01:23:40.487632+00:00",
+  "generated_at": "2026-09-06T04:49:49.704345+00:00",
   "repo": "https://github.com/Ikalus1988/MisakaNet",
   "site": "https://misakanet.org",
   "item_count": 11,
@@ -40,46 +40,6 @@
       "source": "github"
     },
     {
-      "type": "lesson",
-      "title": "Cloudflare AI Gateway: gateway token ≠ account token, /workers-ai/run/ path required",
-      "url": "lessons/contrib/cloudflare-ai-gateway-auth-pitfalls.md",
-      "timestamp": "2026-09-05 00:00:00 UTC",
-      "domain": "devops",
-      "source": "lessons"
-    },
-    {
-      "type": "lesson",
-      "title": "Timeout de curl detrás de proxy corporativo: inspección SSL rompe validación de certificados",
-      "url": "lessons/contrib/es/proxy-corporativo-curl-timeout.md",
-      "timestamp": "2026-09-05",
-      "domain": "devops",
-      "source": "lessons"
-    },
-    {
-      "type": "lesson",
-      "title": "pip install falha com ReadTimeoutError atrás de proxy corporativo",
-      "url": "lessons/contrib/pt-br/instalacao-pip-timeout-proxy.md",
-      "timestamp": "2026-09-05",
-      "domain": "python",
-      "source": "lessons"
-    },
-    {
-      "type": "lesson",
-      "title": "DSH Plugin dsh.so L5 web-smoke — duplicate Loader entry id crashes plugin tree",
-      "url": "lessons/contrib/dsh-plugin-l5-web-smoke-cordis-duplicate-entry.md",
-      "timestamp": "2026-09-03",
-      "domain": "devops",
-      "source": "lessons"
-    },
-    {
-      "type": "lesson",
-      "title": "Async question answers are pulled, not pushed (stateless MCP)",
-      "url": "lessons/contrib/mcp-question-answer-pull-delivery.md",
-      "timestamp": "2026-09-03",
-      "domain": "mcp",
-      "source": "lessons"
-    },
-    {
       "type": "challenge",
       "title": "[Bounty] dsh plugin integration test suite",
       "url": "https://github.com/Ikalus1988/MisakaNet/issues/1403",
@@ -94,6 +54,46 @@
       ],
       "timestamp": "2026-09-01T08:41:03Z",
       "source": "github"
+    },
+    {
+      "type": "lesson",
+      "title": "Report $0 cash honestly while pending is non-zero",
+      "url": "lessons/en/honest-zero-cash-reporting.md",
+      "timestamp": "2026-07-24",
+      "domain": "ops",
+      "source": "lessons"
+    },
+    {
+      "type": "lesson",
+      "title": "Normalize mixed types in links.json pack manifests",
+      "url": "lessons/en/links-json-mixed-types.md",
+      "timestamp": "2026-07-24",
+      "domain": "ops",
+      "source": "lessons"
+    },
+    {
+      "type": "lesson",
+      "title": "Restart long-lived earn loops after code fixes",
+      "url": "lessons/en/restart-earn-loop-after-code-fix.md",
+      "timestamp": "2026-07-24",
+      "domain": "ops",
+      "source": "lessons"
+    },
+    {
+      "type": "lesson",
+      "title": "Atomic file replace for agent status JSON",
+      "url": "lessons/en/atomic-write-replace.md",
+      "timestamp": "2026-07-23",
+      "domain": "ops",
+      "source": "lessons"
+    },
+    {
+      "type": "lesson",
+      "title": "Copy Firefox cookies.sqlite for authenticated API calls",
+      "url": "lessons/en/browser-cookie-export-for-apis.md",
+      "timestamp": "2026-07-23",
+      "domain": "ops",
+      "source": "lessons"
     }
   ]
 }
