@@ -2,7 +2,6 @@
 title: 'Git Push to Fork Repo: ''Permission Denied to Other User'' — Wrong PAT Selected
   by Helper'
 domain: devops
-evidence_level: E1
 tags:
 - meta
 - lesson
@@ -10,18 +9,14 @@ tags:
 - credential
 - helper
 status: published
+provenance:
+  evidence: "post-publication"
 created: '2026-07-06'
 updated: '2026-07-03'
 source: unknown
 confidence: 0.95
 domain_expert: ''
 verified_date: ''
-
-provenance:
-  source: "external"
-  contributor: "unknown"
-  merged_at: "2026-07-31"
-  evidence: "post-publication"
 ---
 
 # Git Push to Fork Repo: "Permission Denied to Other User" — Wrong PAT Selected by Helper
