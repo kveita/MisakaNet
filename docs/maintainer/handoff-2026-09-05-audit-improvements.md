@@ -158,3 +158,14 @@ python3 -m pytest tests/test_lesson_index_discovery.py tests/test_version_consis
 6. 本地 `git pull --ff-only` 保持同步（main 现含 Wave1+2 全部）
 
 *Wave 2 逐条证据见 `.audit-reports-20260905/03-qw-execution-log.md`（追加于 2026-09-05）。*
+
+---
+
+# Wave 3 更新（2026-09-06）
+
+- **v2.28.0 tag 已建**（手动，指向 main `e5bdb5786`，含 registry 对齐 + benchmark 报告）——release-please 未自动打 tag，需在 Release 页确认或补 Release 条目。
+- **今日免费 benchmark（run 34003654163，成功）**：909 runs（4 免费模型）；with-lesson 上下文使 lesson_hit_rate ≈2×（0.489 vs 0.243），输出更短；报告已自动提交 `docs/benchmarks/latest.json`。→ 验证产品核心假设。
+- **registry 发布（挂起）**：沙箱到 github.com OAuth 出口持续不可达 → 需在你机器执行 `mcp-publisher login github && mcp-publisher publish`（server.json v2.28.0 已 VALID；tag 就绪）。
+- **复核：lesson PR ↔ intake 自动 issue（maintenance §11）**：intake issue 79 条（closed 53/open 26，多为 Ikalus1988/intake server 代建，1 bot）；lesson PR 引用的大多为维护者策展 issue；intake→lesson 小闭环合理。风险：自循环贡献/近重复主题/question 误转 lesson（附 guard 建议）。
+- **未变挂起**：audit 红门 PR 队列（多为 env；#1412/#1413 需修 Windows CI）、DSH 上游草案（`.audit-reports-20260905/dsh-upstream-proposals.md`）、MCPVault 认领（可选）、`git pull` 保持同步。
+- **运营提示**：github.com egress 本日多次抖动（git/API 间歇失败，OAuth 端点不可达）；REST 用 Ikalus1988 40 位 PAT；core API 限流 5000/h，批量操作预留。
