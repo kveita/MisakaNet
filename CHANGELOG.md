@@ -7,6 +7,45 @@ All notable changes to the Misaka Network project are documented here.
 
 ---
 
+## [2.42.3](https://github.com/kveita/MisakaNet/compare/v2.42.2...v2.42.3) (2026-10-09)
+
+
+### Bug Fixes
+
+* **ci:** a path the workflow-script checker could not resolve was reported as clean ([#2975](https://github.com/kveita/MisakaNet/issues/2975)) ([f9e4ea0](https://github.com/kveita/MisakaNet/commit/f9e4ea0aa8b1b9050a968d7ab4bbb472ad057f88)), closes [#2940](https://github.com/kveita/MisakaNet/issues/2940)
+* **ci:** FR3 read one directory while the leak was in three ([#3011](https://github.com/kveita/MisakaNet/issues/3011)) ([#3029](https://github.com/kveita/MisakaNet/issues/3029)) ([40f500b](https://github.com/kveita/MisakaNet/commit/40f500b026821475cc45770b46dd6da2356e8ec0))
+* **ci:** the credential gate reported "no secrets found" about files it never opened ([#2971](https://github.com/kveita/MisakaNet/issues/2971)) ([2f48a0f](https://github.com/kveita/MisakaNet/commit/2f48a0fad898d2a5231be55e97dca567467223ab)), closes [#2940](https://github.com/kveita/MisakaNet/issues/2940)
+* **ci:** the lesson lint step discarded its own verdict, twice ([#2940](https://github.com/kveita/MisakaNet/issues/2940) §4) ([#2979](https://github.com/kveita/MisakaNet/issues/2979)) ([a92c0cc](https://github.com/kveita/MisakaNet/commit/a92c0cc79ef669d8902ee602e3fdfbebcecc67fa))
+* **ci:** the pinning advisory's filter was dead, and the suggested repair makes it worse ([#2959](https://github.com/kveita/MisakaNet/issues/2959)) ([02afebc](https://github.com/kveita/MisakaNet/commit/02afebc2030887d8d350cb73d3c0549d8539a387))
+* **cli:** a usage error that named every valid command and could not be acted on ([#2858](https://github.com/kveita/MisakaNet/issues/2858)) ([#2993](https://github.com/kveita/MisakaNet/issues/2993)) ([0754205](https://github.com/kveita/MisakaNet/commit/075420528bc3f6c9365faf4b1235338d61e296f1))
+* **docs:** the phase-5 handoff reached main carrying the path it warns about ([#3035](https://github.com/kveita/MisakaNet/issues/3035)) ([354a3f3](https://github.com/kveita/MisakaNet/commit/354a3f39503c06980f029aedad86a5ceee93dbc6))
+* **dsh:** an unresolvable MCP client returned silently, leaving no way to tell "absent" from "broken" ([#3009](https://github.com/kveita/MisakaNet/issues/3009)) ([2155185](https://github.com/kveita/MisakaNet/commit/21551853e6ea2f6ba8f9d911d2a0cff3618298e6)), closes [#2759](https://github.com/kveita/MisakaNet/issues/2759)
+* **export:** the OKF frontmatter parser was hand-rolled, and it lost the receipt chain ([#3004](https://github.com/kveita/MisakaNet/issues/3004)) ([#3061](https://github.com/kveita/MisakaNet/issues/3061)) ([093ef4a](https://github.com/kveita/MisakaNet/commit/093ef4af19df44c36374f6894e35dde419d0a80a))
+* **lessons:** three lessons answer their intakes but cite no issue, so no receipt is sent ([#3003](https://github.com/kveita/MisakaNet/issues/3003)) ([2ff3943](https://github.com/kveita/MisakaNet/commit/2ff394364e7aef12415ec863042caae1287e47bb))
+* **mcp:** four methods the dispatcher answers were unreachable behind the 401 gate ([#2963](https://github.com/kveita/MisakaNet/issues/2963)) ([#2980](https://github.com/kveita/MisakaNet/issues/2980)) ([6a23969](https://github.com/kveita/MisakaNet/commit/6a23969263048064155609c4bb3acdb3618520c4))
+* **mcp:** minProperties cost one client every tool this server offers ([#2967](https://github.com/kveita/MisakaNet/issues/2967)) ([#2976](https://github.com/kveita/MisakaNet/issues/2976)) ([266b605](https://github.com/kveita/MisakaNet/commit/266b60562edb464c6046bdd6926f4b673560ddff))
+* **mcp:** tools/list and tools/call omitted fields the advertised version requires ([#2968](https://github.com/kveita/MisakaNet/issues/2968)) ([#2977](https://github.com/kveita/MisakaNet/issues/2977)) ([a6dfcf3](https://github.com/kveita/MisakaNet/commit/a6dfcf38396abe4252b19e2ee7fea8718c60f43e))
+* **preflight:** a lesson index that could not be read was reported as "no risk lesson" ([#2940](https://github.com/kveita/MisakaNet/issues/2940)) ([#2978](https://github.com/kveita/MisakaNet/issues/2978)) ([98b6a93](https://github.com/kveita/MisakaNet/commit/98b6a93b959c44707df9bb8e7ae365e928bb1e0c))
+* **provenance:** parse hostname using urlsplit to prevent SSRF guard bypass ([#2960](https://github.com/kveita/MisakaNet/issues/2960)) ([b4111b3](https://github.com/kveita/MisakaNet/commit/b4111b38d8bc165554a53761322fdf3233b36bbf))
+* **search:** a query containing "usage" was zeroing the whole FAQ corpus ([#3001](https://github.com/kveita/MisakaNet/issues/3001)) ([#3043](https://github.com/kveita/MisakaNet/issues/3043)) ([a91baa5](https://github.com/kveita/MisakaNet/commit/a91baa5be4ba9bcd924aed605faff0be94b56219))
+* **search:** the evidence filter matched words the corpus never uses, so it dropped everything ([#3056](https://github.com/kveita/MisakaNet/issues/3056)) ([dcaa7ee](https://github.com/kveita/MisakaNet/commit/dcaa7eeda7320213dd21049c15def2034783ddec))
+* **sync:** the dedup hash was computed over different bytes on each side, twice ([#2983](https://github.com/kveita/MisakaNet/issues/2983)) ([#2987](https://github.com/kveita/MisakaNet/issues/2987)) ([73a4545](https://github.com/kveita/MisakaNet/commit/73a4545969633b910f7bb9cc3d7c2f954d388822))
+* **sync:** the two paths disagreed about the same labelled issue ([#3012](https://github.com/kveita/MisakaNet/issues/3012)) ([#3062](https://github.com/kveita/MisakaNet/issues/3062)) ([d7fe462](https://github.com/kveita/MisakaNet/commit/d7fe462e8310e8a32413433d73328be7546f6b49))
+* **test:** the burst-limit test assumed a clock it does not control ([9adcef7](https://github.com/kveita/MisakaNet/commit/9adcef7e8fee2e919ecae10006a5c175f2b3977d)), closes [#1648](https://github.com/kveita/MisakaNet/issues/1648)
+* **test:** the burst-limit test assumed a clock it does not control ([#3066](https://github.com/kveita/MisakaNet/issues/3066)) ([9adcef7](https://github.com/kveita/MisakaNet/commit/9adcef7e8fee2e919ecae10006a5c175f2b3977d))
+
+
+### Documentation
+
+* **field-reports:** scope the claims this report cannot support, instead of leaving them over-claimed ([#3011](https://github.com/kveita/MisakaNet/issues/3011)) ([#3036](https://github.com/kveita/MisakaNet/issues/3036)) ([f61bada](https://github.com/kveita/MisakaNet/commit/f61bada4bb97f2df8665b785d993aec0a96ffbb6))
+* **handoff:** phase 4 — ten §3.1 closures, the delivery half proven in production, and seven bad judgment criteria ([#3010](https://github.com/kveita/MisakaNet/issues/3010)) ([83bcfc6](https://github.com/kveita/MisakaNet/commit/83bcfc6aaf88619885004542c89933258c47b919))
+* **readme:** drop a 6 MB recording that advertises 235 lessons out of 469 ([#2990](https://github.com/kveita/MisakaNet/issues/2990)) ([e71bd09](https://github.com/kveita/MisakaNet/commit/e71bd09c64d32158f54a6765c3cdc52b36d42e14))
+
+
+### Tests
+
+* **okf:** the [#3004](https://github.com/kveita/MisakaNet/issues/3004) guard was only as broad as its own regex ([#3064](https://github.com/kveita/MisakaNet/issues/3064)) ([68d09a3](https://github.com/kveita/MisakaNet/commit/68d09a35e22778f45f0ec970b5297efdcfd75790))
+
 ## [2.42.2](https://github.com/Ikalus1988/MisakaNet/compare/v2.42.1...v2.42.2) (2026-10-06)
 
 
