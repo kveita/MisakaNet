@@ -7,6 +7,23 @@ All notable changes to the Misaka Network project are documented here.
 
 ---
 
+## [2.43.0](https://github.com/Ikalus1988/MisakaNet/compare/v2.42.3...v2.43.0) (2026-10-12)
+
+
+### Features
+
+* **bench:** measure whether a relevance floor could separate [#2790](https://github.com/Ikalus1988/MisakaNet/issues/2790)'s two bands ([#3153](https://github.com/Ikalus1988/MisakaNet/issues/3153)) ([6e4fe3f](https://github.com/Ikalus1988/MisakaNet/commit/6e4fe3f7e71f30ddeab4764d7e2b7f1d6d3492ed))
+
+
+### Bug Fixes
+
+* **readme:** give README.zh-CN.md the same 19 badges as the canonical one ([#3154](https://github.com/Ikalus1988/MisakaNet/issues/3154)) ([e580f56](https://github.com/Ikalus1988/MisakaNet/commit/e580f569183d0709013bf30f987d1a9e09e213b7))
+
+
+### Documentation
+
+* **reputation:** the contributor snapshot is not a published board ([#3127](https://github.com/Ikalus1988/MisakaNet/issues/3127)) ([3a2a631](https://github.com/Ikalus1988/MisakaNet/commit/3a2a6317ba08ef5fa9251ea5266eb84ee9a85aca))
+
 ## [2.42.3](https://github.com/Ikalus1988/MisakaNet/compare/v2.42.2...v2.42.3) (2026-10-10)
 
 
